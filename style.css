@@ -246,8 +246,7 @@ img {
 }
 
 .glitch {
-    position: relative;
-    animation: glitch 3s infinite;
+ 
 }
 
 @keyframes glitch {
