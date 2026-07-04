@@ -146,3 +146,19 @@ window.addEventListener('keydown', (e) => {
     document.body.classList.remove('modal-open');
   }
 });
+
+// Extra safety: keep projects visible on mobile even if scroll animations fail
+(function(){
+  const projects = document.getElementById('projects');
+  if(projects){
+    projects.classList.add('visible');
+    projects.style.opacity = '1';
+    projects.style.visibility = 'visible';
+    projects.style.transform = 'none';
+  }
+  document.querySelectorAll('#projects .project-card').forEach(card => {
+    card.style.opacity = '1';
+    card.style.visibility = 'visible';
+    card.style.transform = 'none';
+  });
+})();

@@ -45,3 +45,25 @@ body.modal-open{overflow:hidden}
 .project-card{display:block!important;visibility:visible!important;opacity:1!important}
 .project-card img{display:block!important;max-width:100%}
 @media(max-width:980px){.projects-grid,.blog-grid,.tech-stack-grid{display:grid!important;grid-template-columns:1fr!important}.project-card{min-height:auto}.article-modal{padding:12px}.article-modal-card{padding:28px 20px;margin:3vh auto}.article-close{right:14px;top:12px}}
+
+/* Mobile projects visibility fix */
+#projects.reveal,
+#projects.reveal.visible,
+#projects .projects-grid,
+#projects .project-card{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+#projects .projects-grid{
+  display:grid!important;
+  height:auto!important;
+  min-height:1px!important;
+}
+@media(max-width:980px){
+  #projects{display:block!important;opacity:1!important;visibility:visible!important;transform:none!important;overflow:visible!important;min-height:auto!important;}
+  #projects .projects-grid{display:grid!important;grid-template-columns:1fr!important;gap:22px!important;overflow:visible!important;}
+  #projects .project-card{display:block!important;width:100%!important;min-height:0!important;height:auto!important;overflow:hidden!important;}
+  #projects .project-card img{display:block!important;width:100%!important;height:220px!important;opacity:1!important;visibility:visible!important;object-fit:cover!important;}
+  #projects .project-card>div{display:block!important;opacity:1!important;visibility:visible!important;}
+}
