@@ -1,327 +1,89 @@
-// ==========================================
-// PARTICLES.JS CONFIG
-// ==========================================
-particlesJS('particles-js', {
-    particles: {
-        number: {
-            value: 80,
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: '#00f0ff'
-        },
-        shape: {
-            type: 'circle'
-        },
-        opacity: {
-            value: 0.5,
-            random: false
-        },
-        size: {
-            value: 3,
-            random: true
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: '#00f0ff',
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: 'none',
-            random: false,
-            straight: false,
-            out_mode: 'out',
-            bounce: false
-        }
-    },
-    interactivity: {
-        detect_on: 'canvas',
-        events: {
-            onhover: {
-                enable: true,
-                mode: 'grab'
-            },
-            onclick: {
-                enable: true,
-                mode: 'push'
-            },
-            resize: true
-        },
-        modes: {
-            grab: {
-                distance: 140,
-                line_linked: {
-                    opacity: 1
-                }
-            },
-            push: {
-                particles_nb: 4
-            }
-        }
-    },
-    retina_detect: true
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+toggle.addEventListener('click', () => nav.classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+const glow = document.querySelector('.cursor-glow');
+window.addEventListener('mousemove', (e) => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
 });
 
-// ==========================================
-// CUSTOM CURSOR
-// ==========================================
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+const typed = document.getElementById('typedText');
+const words = ['WordPress Websites', 'Shopify Stores', 'Landing Pages', 'Modern Animated UI'];
+let wi = 0, ci = 0, deleting = false;
+function typeLoop(){
+  const word = words[wi];
+  typed.textContent = word.slice(0, ci);
+  if(!deleting && ci < word.length) ci++;
+  else if(deleting && ci > 0) ci--;
+  else { deleting = !deleting; if(!deleting) wi = (wi + 1) % words.length; }
+  setTimeout(typeLoop, deleting ? 45 : 85);
+}
+typeLoop();
 
-let mouseX = 0;
-let mouseY = 0;
-let followerX = 0;
-let followerY = 0;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      entry.target.querySelectorAll('[data-count]').forEach(counter => {
+        if(counter.dataset.done) return;
+        counter.dataset.done = 'true';
+        const target = Number(counter.dataset.count);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 42));
+        const timer = setInterval(() => {
+          current += step;
+          if(current >= target){ current = target; clearInterval(timer); }
+          counter.textContent = target === 100 ? current + '%' : current + '+';
+        }, 28);
+      });
+    }
+  });
+}, { threshold: 0.14 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
+const sections = [...document.querySelectorAll('section[id]')];
+window.addEventListener('scroll', () => {
+  let current = 'home';
+  sections.forEach(section => { if(window.scrollY >= section.offsetTop - 130) current = section.id; });
+  document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
 });
 
-function animate() {
-    const distX = mouseX - followerX;
-    const distY = mouseY - followerY;
-    
-    followerX += distX / 10;
-    followerY += distY / 10;
-    
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
-    
-    requestAnimationFrame(animate);
+const tilt = document.querySelector('.tilt-card');
+if(tilt){
+  tilt.addEventListener('mousemove', e => {
+    const r = tilt.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    tilt.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+  });
+  tilt.addEventListener('mouseleave', () => tilt.style.transform = 'rotateY(0deg) rotateX(0deg)');
 }
 
-animate();
+const waToggle = document.querySelector('.wa-toggle');
+const waBox = document.querySelector('.wa-box');
+const waClose = document.querySelector('.wa-close');
+waToggle.addEventListener('click', () => waBox.classList.toggle('open'));
+waClose.addEventListener('click', () => waBox.classList.remove('open'));
+setTimeout(() => waBox.classList.add('open'), 2500);
 
-// Cursor hover effects
-document.querySelectorAll('a, button, .btn').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2)';
-        cursorFollower.style.transform = 'scale(1.5)';
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  statusEl.textContent = 'Sending...';
+  const formData = new FormData(form);
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/sherazh902@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
     });
-    
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorFollower.style.transform = 'scale(1)';
-    });
-});
-
-// ==========================================
-// NAVIGATION
-// ==========================================
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Sticky navbar
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Active link on scroll
-const sections = document.querySelectorAll('section');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Close mobile menu on link click
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// ==========================================
-// TYPING EFFECT
-// ==========================================
-const typingText = document.querySelector('.typing-text');
-const textArray = [
-    'WordPress Developer',
-    'Shopify Expert',
-    'Frontend Developer',
-    'eCommerce Specialist'
-];
-
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    const currentText = textArray[textIndex];
-    
-    if (isDeleting) {
-        typingText.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 2000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(typeEffect, 500);
-    } else {
-        setTimeout(typeEffect, isDeleting ? 50 : 100);
-    }
-}
-
-typeEffect();
-
-// ==========================================
-// ANIMATE ON SCROLL (AOS)
-// ==========================================
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
-});
-
-// ==========================================
-// COUNTER ANIMATION
-// ==========================================
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-
-const countUp = () => {
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const increment = target / speed;
-        
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(() => countUp(), 1);
-        } else {
-            counter.innerText = target + (target === 100 ? '%' : '+');
-        }
-    });
-};
-
-// Trigger counter on scroll
-const counterSection = document.querySelector('.about');
-let counterTriggered = false;
-
-window.addEventListener('scroll', () => {
-    const sectionTop = counterSection.offsetTop;
-    const sectionHeight = counterSection.clientHeight;
-    const scrollPosition = window.scrollY + window.innerHeight;
-    
-    if (scrollPosition > sectionTop + sectionHeight / 2 && !counterTriggered) {
-        countUp();
-        counterTriggered = true;
-    }
-});
-
-// ==========================================
-// SKILL BARS ANIMATION
-// ==========================================
-const skillSection = document.querySelector('.skills');
-let skillsAnimated = false;
-
-window.addEventListener('scroll', () => {
-    const sectionTop = skillSection.offsetTop;
-    const sectionHeight = skillSection.clientHeight;
-    const scrollPosition = window.scrollY + window.innerHeight;
-    
-    if (scrollPosition > sectionTop + sectionHeight / 2 && !skillsAnimated) {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        skillBars.forEach(bar => {
-            const progress = bar.getAttribute('data-progress');
-            bar.style.width = progress + '%';
-        });
-        
-        skillsAnimated = true;
-    }
-});
-
-// ==========================================
-// FORM SUBMISSION
-// ==========================================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:sherazh902@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    contactForm.reset();
-    
-    alert('Thank you for your message! Your default email client will open.');
-});
-
-// ==========================================
-// SMOOTH SCROLL
-// ==========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ==========================================
-// PRELOADER (Optional)
-// ==========================================
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    if (!res.ok) throw new Error('Form service error');
+    form.reset();
+    statusEl.textContent = 'Thank you! Your message has been submitted.';
+  } catch (err) {
+    statusEl.textContent = 'Message could not be submitted. Please WhatsApp or email me directly.';
+  }
 });

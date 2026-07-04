@@ -1,527 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hassan Sheraz | WordPress/Shopify Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hassan Sheraz — WordPress & Shopify Developer</title>
+  <meta name="description" content="Portfolio of Hassan Sheraz, WordPress and Shopify Developer based in Lahore, Pakistan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">HS</span>
-                <div class="logo-pulse"></div>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <div class="cursor-glow"></div>
+  <div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span>HS</span><b>Hassan Sheraz</b></a>
+    <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    <nav class="nav">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#blogs">Blogs</a><a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content" data-aos="fade-right">
-                <div class="greeting">
-                    <span class="wave">👋</span> Hello, I'm
-                </div>
-                <h1 class="hero-title">
-                    <span class="glitch" data-text="HASSAN SHERAZ">HASSAN SHERAZ</span>
-                </h1>
-                <div class="hero-subtitle">
-                    <span class="typing-text"></span>
-                    <span class="cursor-blink">|</span>
-                </div>
-                <p class="hero-description">
-                    Crafting high-performance WordPress & Shopify solutions that drive business growth
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Hire Me</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <span>View Work</span>
-                        <i class="fas fa-briefcase"></i>
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="tel:+923314691781" class="social-icon" data-tooltip="Call Me">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                    <a href="mailto:sherazh902@gmail.com" class="social-icon" data-tooltip="Email Me">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="#" class="social-icon" data-tooltip="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-icon" data-tooltip="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-left">
-                <div class="image-container">
-                    <div class="floating-icons">
-                        <i class="fab fa-wordpress icon-float" style="--i:1;"></i>
-                        <i class="fab fa-shopify icon-float" style="--i:2;"></i>
-                        <i class="fab fa-html5 icon-float" style="--i:3;"></i>
-                        <i class="fab fa-css3-alt icon-float" style="--i:4;"></i>
-                        <i class="fab fa-js icon-float" style="--i:5;"></i>
-                    </div>
-                    <img src="assets/images/profile.jpg" alt="Hassan Sheraz" class="profile-img">
-                    <div class="image-glow"></div>
-                </div>
-            </div>
+  <main>
+    <section id="home" class="hero section reveal">
+      <div class="hero-copy">
+        <span class="status"><i class="fa-solid fa-circle"></i> Available for freelance & full-time roles</span>
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Hassan Sheraz</h1>
+        <h3 class="typed-line">I build <span id="typedText">WordPress Websites</span></h3>
+        <p class="lead">Crafting high-performance WordPress websites, Shopify stores and conversion-focused landing pages with smooth animations, premium layouts, mobile-first design and clean user experience.</p>
+        <div class="hero-actions">
+          <a class="btn primary magnet" href="#contact"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+          <a class="btn ghost magnet" href="#projects"><i class="fa-solid fa-eye"></i> View Work</a>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <p>Scroll Down</p>
+        <div class="social-links">
+          <a href="mailto:sherazh902@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="tel:+923314691781"><i class="fa-solid fa-phone"></i> Phone</a>
+          <a href="https://www.linkedin.com/in/hassan-sheraz-920868297" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/code-hassan-cui/" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-card tilt-card">
+          <div class="avatar-ring"><div class="avatar">HS</div></div>
+          <h2>WordPress / Shopify Developer</h2>
+          <p>Lahore, Pakistan</p>
+          <div class="profile-stats">
+            <span><b data-count="20">0</b><small>Projects</small></span>
+            <span><b data-count="1">0</b><small>Year Exp.</small></span>
+            <span><b data-count="100">0</b><small>Responsive</small></span>
+          </div>
+        </div>
+        <div class="code-card floating-card">
+<pre><code>const developer = {
+  name: 'Hassan Sheraz',
+  builds: ['Websites','Landing Pages'],
+  stack: ['WordPress','Shopify'],
+  style: 'Modern animated UI'
+}</code></pre>
+        </div>
+      </div>
+      <a href="#about" class="scroll-down">Scroll Down <i class="fa-solid fa-arrow-down"></i></a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Get to know me</span>
-                <h2 class="section-title">About <span class="highlight">Me</span></h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <p class="about-description">
-                        I am <span class="text-highlight">Hassan Sheraz</span>, a skilled WordPress/Shopify developer with a passion for creating dynamic, user-friendly, and visually appealing websites and eCommerce stores.
-                    </p>
-                    <p class="about-description">
-                        With strong experience in <span class="text-highlight">WordPress and Shopify development</span>, including theme customization, plugin and app integration, and performance optimization, I create responsive and high-performing digital solutions tailored to client needs.
-                    </p>
-                    <div class="stats-grid">
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="stat-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <div class="stat-number" data-count="15">0</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="stat-icon">
-                                <i class="fas fa-smile"></i>
-                            </div>
-                            <div class="stat-number" data-count="100">0</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="stat-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="stat-number" data-count="8">0</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-education" data-aos="fade-left">
-                    <h3 class="education-title">
-                        <i class="fas fa-graduation-cap"></i> Education
-                    </h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">2023 - 2027</span>
-                                <h4>Bachelor of Information Technology</h4>
-                                <p>COMSATS University Islamabad, Lahore Campus</p>
-                                <div class="gpa-badge">GPA: <span class="gpa-number">3.53</span></div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <span class="timeline-date">2021 - 2023</span>
-                                <h4>FSC Pre Engineering</h4>
-                                <p>Govt. Degree College Muzaffargarh</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="section split reveal">
+      <div><p class="eyebrow">Get to know me</p><h2>About Me</h2></div>
+      <div class="text-block glass-card">
+        <p>I am Hassan Sheraz, a WordPress/Shopify developer with a passion for creating dynamic, user-friendly and visually appealing websites and eCommerce stores.</p>
+        <p>I work with Elementor, WooCommerce, Shopify themes, custom liquid, responsive CSS and practical CRO improvements to make websites look modern and easy to manage.</p>
+        <div class="timeline-mini"><span>2025 - Present</span><b>WordPress/Shopify Developer — Digital Dost</b></div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">What I Do</span>
-                <h2 class="section-title">My <span class="highlight">Skills</span></h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="skill-icon">
-                        <i class="fab fa-wordpress"></i>
-                    </div>
-                    <h3>WordPress</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
-                    </div>
-                    <span class="skill-percentage">95%</span>
-                </div>
-
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="skill-icon">
-                        <i class="fab fa-shopify"></i>
-                    </div>
-                    <h3>Shopify</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                    <span class="skill-percentage">90%</span>
-                </div>
-
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="skill-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Web Design</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="88"></div>
-                    </div>
-                    <span class="skill-percentage">88%</span>
-                </div>
-
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
-                    <div class="skill-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>Ecommerce</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="92"></div>
-                    </div>
-                    <span class="skill-percentage">92%</span>
-                </div>
-
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="500">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Frontend Dev</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                    <span class="skill-percentage">85%</span>
-                </div>
-
-                <div class="skill-card" data-aos="flip-left" data-aos-delay="600">
-                    <div class="skill-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h3>Plugin Integration</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                    <span class="skill-percentage">90%</span>
-                </div>
-            </div>
-        </div>
+    <section id="skills" class="section reveal">
+      <p class="eyebrow">// tech_stack</p><h2>Technologies I Work With</h2>
+      <div class="tech-stack-grid">
+        <article class="tech-box glass-card"><h3>Frontend</h3><div class="tech-tags"><span><i class="fa-brands fa-html5"></i>HTML5</span><span><i class="fa-brands fa-css3-alt"></i>CSS3</span><span><i class="fa-brands fa-js"></i>JavaScript</span><span><i class="fa-brands fa-react"></i>React</span><span><i class="fa-solid fa-wand-magic-sparkles"></i>Animations</span><span><i class="fa-brands fa-bootstrap"></i>Bootstrap</span></div></article>
+        <article class="tech-box glass-card"><h3>WordPress</h3><div class="tech-tags"><span><i class="fa-brands fa-wordpress"></i>WordPress</span><span><i class="fa-solid fa-layer-group"></i>Elementor</span><span><i class="fa-solid fa-cart-shopping"></i>WooCommerce</span><span><i class="fa-solid fa-plug"></i>Plugins</span><span><i class="fa-solid fa-code"></i>Custom CSS</span><span><i class="fa-solid fa-envelope-open-text"></i>Forms</span></div></article>
+        <article class="tech-box glass-card"><h3>Shopify</h3><div class="tech-tags"><span><i class="fa-brands fa-shopify"></i>Shopify</span><span><i class="fa-solid fa-droplet"></i>Liquid</span><span><i class="fa-solid fa-tags"></i>Discounts</span><span><i class="fa-solid fa-box"></i>Products</span><span><i class="fa-solid fa-table-list"></i>Metafields</span><span><i class="fa-solid fa-mobile-screen"></i>Sections</span></div></article>
+        <article class="tech-box glass-card"><h3>Tools & Others</h3><div class="tech-tags"><span><i class="fa-brands fa-git-alt"></i>Git</span><span><i class="fa-brands fa-github"></i>GitHub</span><span><i class="fa-solid fa-code"></i>VS Code</span><span><i class="fa-brands fa-figma"></i>Figma</span><span><i class="fa-solid fa-cloud"></i>Vercel</span><span><i class="fa-solid fa-chart-line"></i>Analytics</span></div></article>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">My Work</span>
-                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600" alt="DentxClinic">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Booking</span>
-                        </div>
-                        <h3>DentxClinic</h3>
-                        <p>Professional WordPress website for a dental clinic with online appointment booking, service pages, and SEO optimization.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-wordpress"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600" alt="Prime Consult">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Corporate</span>
-                        </div>
-                        <h3>Prime Consult UAE</h3>
-                        <p>Professional corporate website showcasing consultancy services with responsive design and seamless functionality.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-wordpress"></i>
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-bootstrap"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Oxichlor">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Custom Theme</span>
-                        </div>
-                        <h3>Oxichlor</h3>
-                        <p>Responsive and user-friendly website built with custom WordPress themes and plugins for Unity IT Systems.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-wordpress"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fab fa-js"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600" alt="Najia Haider">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Fashion</span>
-                        </div>
-                        <h3>Najia Haider</h3>
-                        <p>Professional Shopify store for a clothing brand with user-friendly features for browsing collections and products.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-shopify"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="London Shopping Mall">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Clothing</span>
-                        </div>
-                        <h3>Mahoor Official</h3>
-                        <p>Professional Shopify store for a clothing brand with user-friendly features for browsing collections and products.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-shopify"></i>
-                            <i class="fas fa-shopping-bag"></i>
-                            <i class="fab fa-php"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="projects" class="section reveal">
+      <div class="section-head"><div><p class="eyebrow">My Work</p><h2>Featured Projects</h2></div><p>Clickable project cards with clean hover animations and live links.</p></div>
+      <div class="projects-grid">
+        <a class="project-card glass-card" href="https://morioxshoes.com/" target="_blank" rel="noopener"><img src="assets/moriox-shoes.svg" alt="Moriox Shoes"><div><span>Shopify Fashion</span><h3>Moriox Shoes</h3><p>Collection updates, sale menu, banners and eCommerce UI improvements.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://tinglelinges.com/" target="_blank" rel="noopener"><img src="assets/tingle-linges.svg" alt="Tingle Linges"><div><span>Shopify Store</span><h3>Tingle Linges</h3><p>Shopify fashion store improvements, product sections, bundles and responsive updates.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://najiahaider.com/" target="_blank" rel="noopener"><img src="assets/najia-haider.svg" alt="Najia Haider"><div><span>Shopify Fashion</span><h3>Najia Haider</h3><p>Premium fashion store updates with products, media sections and clean mobile layout.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://rungebahar.com/" target="_blank" rel="noopener"><img src="assets/rung-e-bahar.svg" alt="Rung e Bahar"><div><span>Shopify Clothing</span><h3>Rung e Bahar</h3><p>Modern Shopify clothing website with clickable collections and product presentation.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://thelumas.com/" target="_blank" rel="noopener"><img src="assets/the-lumas.svg" alt="The Lumas"><div><span>Shopify Brand</span><h3>The Lumas</h3><p>Responsive Shopify store layout, homepage sections and eCommerce experience work.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://mahoorofficial.com/" target="_blank" rel="noopener"><img src="assets/mahoor-official.svg" alt="Mahoor Official"><div><span>Shopify Fashion</span><h3>Mahoor Official</h3><p>Collection launch, PostEx setup, product handling and homepage improvements.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://silaya.pk/" target="_blank" rel="noopener"><img src="assets/silaya.svg" alt="Silaya"><div><span>Shopify Store</span><h3>Silaya</h3><p>Shopify eCommerce store updates with polished product and collection pages.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://nutroveda.com/" target="_blank" rel="noopener"><img src="assets/nutroveda.svg" alt="Nutroveda"><div><span>WordPress WooCommerce</span><h3>Nutroveda</h3><p>WooCommerce fixes, Mailchimp form setup, footer/header and policy updates.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://inoyou.com/" target="_blank" rel="noopener"><img src="assets/inoyou.svg" alt="Inoyou"><div><span>WordPress Ecommerce</span><h3>Inoyou</h3><p>Product layouts, wishlist styling, hover effects and WooCommerce UI fixes.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://coradawnsolar.com/" target="_blank" rel="noopener"><img src="assets/cora-dawn-solar.svg" alt="Cora Dawn Solar"><div><span>WordPress Business</span><h3>Cora Dawn Solar</h3><p>Solar business website with service pages and responsive website sections.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://www.ghaniglobalholdings.com/" target="_blank" rel="noopener"><img src="assets/ghani-global.svg" alt="Ghani Global"><div><span>Next.js Corporate</span><h3>Ghani Global Holdings</h3><p>Corporate website with investor relations, notices and responsive layouts.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+        <a class="project-card glass-card" href="https://elariluxe.com/" target="_blank" rel="noopener"><img src="assets/elari-luxe.svg" alt="Elari Luxe"><div><span>Shopify Store</span><h3>Elari Luxe</h3><p>Responsive fashion store setup with product presentation and policy pages.</p><b>View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></b></div></a>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Career Journey</span>
-                <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="experience-timeline">
-                <div class="timeline-line"></div>
-                <div class="experience-item" data-aos="fade-right">
-                    <div class="experience-dot">
-                        <div class="dot-pulse"></div>
-                    </div>
-                    <div class="experience-content">
-                        <span class="experience-date">2025 - Present</span>
-                        <div class="experience-badge">CURRENT</div>
-                        <h3>WordPress/Shopify Developer</h3>
-                        <h4>Digital Dost Software Company</h4>
-                        <p>Developing high-performance WordPress and Shopify solutions, customizing themes, integrating plugins/apps, and optimizing website performance for enhanced user experience and business growth.</p>
-                        <div class="experience-skills">
-                            <span>WordPress</span>
-                            <span>Shopify</span>
-                            <span>Theme Dev</span>
-                            <span>Plugin Integration</span>
-                            <span>Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="blogs" class="section reveal">
+      <div class="section-head"><div><p class="eyebrow">Latest Writings</p><h2>Blogs & Notes</h2></div><p>Portfolio-style blogs similar to modern developer websites.</p></div>
+      <div class="blog-grid">
+        <article class="blog-card glass-card"><span>Shopify</span><h3>How I Improve Shopify Store Layouts</h3><time>Jul 4, 2026</time><p>A practical guide about banners, collection cards, product blocks and trust sections for better online stores.</p><a href="blogs/shopify-store-layouts.html">Read Article →</a></article>
+        <article class="blog-card glass-card"><span>WordPress</span><h3>My Process for Building WordPress Websites</h3><time>Jun 28, 2026</time><p>From homepage planning to responsive Elementor sections, this article explains how I approach business websites.</p><a href="blogs/wordpress-website-process.html">Read Article →</a></article>
+        <article class="blog-card glass-card"><span>Landing Pages</span><h3>What Makes a Landing Page Convert?</h3><time>Jun 20, 2026</time><p>A simple checklist for landing page structure, CTA placement, mobile spacing and user-focused content.</p><a href="blogs/landing-page-conversion.html">Read Article →</a></article>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Get in Touch</span>
-                <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Let's Work Together!</h3>
-                    <p>I'm available for freelance projects and full-time opportunities. Let's bring your ideas to life!</p>
-                    
-                    <div class="contact-cards">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+923314691781">+92 331 4691781</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:sherazh902@gmail.com">sherazh902@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>WAPDA Town, Lahore</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container" data-aos="fade-left">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" required></textarea>
-                            <label for="message">Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <section id="contact" class="section contact-section reveal">
+      <div><p class="eyebrow">Get in Touch</p><h2>Let's Work Together!</h2><p class="contact-text">Available for freelance projects and full-time opportunities.</p><div class="contact-meta glass-card">
+        <p><i class="fa-solid fa-envelope"></i><b>Email:</b> <a href="mailto:sherazh902@gmail.com">sherazh902@gmail.com</a></p>
+        <p><i class="fa-solid fa-phone"></i><b>Phone:</b> <a href="tel:+923314691781">+92 331 4691781</a></p>
+        <p><i class="fa-brands fa-linkedin"></i><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/hassan-sheraz-920868297" target="_blank" rel="noopener">linkedin.com/in/hassan-sheraz</a></p>
+        <p><i class="fa-brands fa-github"></i><b>GitHub:</b> <a href="https://github.com/code-hassan-cui/" target="_blank" rel="noopener">github.com/code-hassan-cui</a></p>
+      </div></div>
+      <form id="contactForm" class="contact-form glass-card">
+        <input type="hidden" name="_subject" value="New portfolio contact message">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button class="btn primary" type="submit">Send Message</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Hassan Sheraz</h3>
-                    <p>WordPress/Shopify Developer</p>
-                </div>
-                <div class="footer-social">
-                    <a href="tel:+923314691781"><i class="fas fa-phone"></i></a>
-                    <a href="mailto:sherazh902@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hassan Sheraz. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <div class="whatsapp-widget">
+    <div class="wa-box">
+      <div class="wa-head"><b>Hassan Sheraz</b><button class="wa-close" aria-label="Close">×</button></div>
+      <p>Hi 👋 Need a website? Chat with me on WhatsApp.</p>
+      <a href="https://wa.me/923314691781?text=Hi%20Hassan,%20I%20visited%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">Start WhatsApp Chat</a>
+    </div>
+    <button class="wa-toggle" aria-label="Open WhatsApp chat"><i class="fa-brands fa-whatsapp"></i></button>
+  </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+  <footer><div class="footer-links"><a href="mailto:sherazh902@gmail.com">Email</a><a href="https://www.linkedin.com/in/hassan-sheraz-920868297" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/code-hassan-cui/" target="_blank" rel="noopener">GitHub</a></div>© 2026 Hassan Sheraz. All Rights Reserved.</footer>
+  <script src="script.js"></script>
 </body>
 </html>
